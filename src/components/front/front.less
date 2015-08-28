@@ -1,4 +1,4 @@
-.front, .front div{
+.front, .front > div{
   height: 100%;
   width: 100%;
 }
@@ -6,7 +6,7 @@
 .front{
   position: relative;
 
-  div {
+  > div {
     position: absolute;
     top:0;
     left: 0;
@@ -31,4 +31,34 @@
 img {
   height:150px;
   width:300px;
+}
+
+.logo{
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    font-size: 3em;
+    
+    .name{
+        font-weight: 700;
+        border-bottom: 1px solid #fff;
+        padding: 0 0.5em;
+    }
+}
+
+nav{
+    margin: 2em 0 0 2em;
+    a{
+        color:#FFF;
+        text-decoration: none;
+        font-size: 1.5em;
+        margin-left:2em;
+        
+        transition: color 0.5s ease-out;
+        &:hover{
+            color: #FEFB00;
+        }
+    }
 }

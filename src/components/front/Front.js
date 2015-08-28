@@ -39,6 +39,15 @@ var Front = React.createClass({
       <div className="front">
         {wallpapers}
         <div className="overlay">
+          <nav>
+            <a href="/me">me</a>
+            <a href="/me">photos</a>
+            <a href="/me">contact</a>
+          </nav>
+          <div className='logo'>
+              <div className='name'>Bethanne Runyan</div>
+              <div className='sub'>Photography</div>
+          </div>
         </div>
       </div>
     );
