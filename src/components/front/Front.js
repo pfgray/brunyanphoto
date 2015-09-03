@@ -8,7 +8,8 @@ var images = [
   require('../../images/scrolling/image1.jpg'),
   require('../../images/scrolling/image2.jpg'),
   require('../../images/scrolling/image3.jpg'),
-  require('../../images/scrolling/image4.jpg')
+  require('../../images/scrolling/image4.jpg'),
+  require('../../images/scrolling/image5.jpg')
 ];
 
 var Front = React.createClass({
