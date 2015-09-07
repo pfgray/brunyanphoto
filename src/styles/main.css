@@ -10,13 +10,8 @@
     font-style: normal;
 }*/
 
-html, body {
-  background: #222222;
-  height:100%;
-  width: 100%;
-}
-
-#content, .main {
+html, body, #content, .main {
+  background: #222;
   height:100%;
   width: 100%;
 }
