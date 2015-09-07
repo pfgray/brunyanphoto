@@ -25,7 +25,7 @@
 }
 
 .front .overlay{
-  background-color: fadeout(#000, 50%);
+  //background-color: fadeout(#000, 50%);
 }
 
 img {
@@ -35,26 +35,43 @@ img {
 
 .logo{
     position: absolute;
-    bottom: 1em;
-    right: 1em;
+    bottom:1em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
     text-align: center;
-    font-family: 'Dancing Script', cursive;
+    margin: 0 auto;
+    width:500px;
+    font-family: 'Pinyon Script' 'andalus', cursive;
     font-size: 3em;
     
-    .name{
-        font-weight: 700;
+    //border-radius: 100%;
+    padding: 0 0.5em;
+    //border:1px solid red;
+    //background-image: -webkit-radial-gradient(circle, black, rgba(0,0,0,0));
+    //background-color: rgba(0,0,0,0.5);
+    text-shadow: 0 0 70px #000;
+    
+    .top{
+        //font-weight: 500;
         border-bottom: 1px solid #fff;
         padding: 0 0.5em;
     }
+    .bottom{
+        /*border-top:1px solid #fff;*/
+    }
 }
 
-nav{
-    margin: 2em 0 0 2em;
+.nav{
+    box-sizing: border-box;
     a{
         color:#FFF;
         text-decoration: none;
-        font-size: 1.5em;
-        margin-left:2em;
+        font-family:sans-serif;
+        margin: 0;
+        display:inline-block;
         
         transition: color 0.5s ease-out;
         &:hover{
