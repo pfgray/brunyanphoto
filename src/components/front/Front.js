@@ -8,7 +8,8 @@ var images = [
   require('../../images/scrolling/image1.jpg'),
   require('../../images/scrolling/image2.jpg'),
   require('../../images/scrolling/image3.jpg'),
-  require('../../images/scrolling/image4.jpg')
+  require('../../images/scrolling/image4.jpg'),
+  require('../../images/scrolling/image5.jpg')
 ];
 
 var Front = React.createClass({
@@ -39,6 +40,19 @@ var Front = React.createClass({
       <div className="front">
         {wallpapers}
         <div className="overlay">
+          <div className='logo'>
+              <div className='top'>Bethanne Runyan</div>
+              {/*
+              <div className="middle">
+                  <div className="nav">
+                      <a href="/me">me</a>
+                      <a href="/me">photos</a>
+                      <a href="/me">contact</a>
+                  </div>
+              </div>
+              */}
+              <div className='bottom'>Photography</div>
+          </div>
         </div>
       </div>
     );

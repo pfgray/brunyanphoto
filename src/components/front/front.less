@@ -1,4 +1,4 @@
-.front, .front div{
+.front, .front > div{
   height: 100%;
   width: 100%;
 }
@@ -6,7 +6,7 @@
 .front{
   position: relative;
 
-  div {
+  > div {
     position: absolute;
     top:0;
     left: 0;
@@ -25,10 +25,57 @@
 }
 
 .front .overlay{
-  background-color: fadeout(#000, 50%);
+  //background-color: fadeout(#000, 50%);
 }
 
 img {
   height:150px;
   width:300px;
+}
+
+.logo{
+    position: absolute;
+    bottom:1em;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+    margin: 0 auto;
+    width:500px;
+    font-family: 'Pinyon Script' 'andalus', cursive;
+    font-size: 3em;
+    
+    //border-radius: 100%;
+    padding: 0 0.5em;
+    //border:1px solid red;
+    //background-image: -webkit-radial-gradient(circle, black, rgba(0,0,0,0));
+    //background-color: rgba(0,0,0,0.5);
+    text-shadow: 0 0 70px #000;
+    
+    .top{
+        //font-weight: 500;
+        border-bottom: 1px solid #fff;
+        padding: 0 0.5em;
+    }
+    .bottom{
+        /*border-top:1px solid #fff;*/
+    }
+}
+
+.nav{
+    box-sizing: border-box;
+    a{
+        color:#FFF;
+        text-decoration: none;
+        font-family:sans-serif;
+        margin: 0;
+        display:inline-block;
+        
+        transition: color 0.5s ease-out;
+        &:hover{
+            color: #FEFB00;
+        }
+    }
 }
