@@ -7,6 +7,8 @@ var Route = Router.Route;
 
 var Front = require('./front/Front');
 
+require('font-awesome/css/font-awesome.css');
+
 
 var content = document.getElementById('content');
 
@@ -16,6 +18,6 @@ var Routes = (
   </Route>
 );
 
-Router.run(Routes, function (Handler) {
+Router.run(Routes, Router.HistoryLocation, function (Handler) {
   React.render(<Handler/>, content);
 });

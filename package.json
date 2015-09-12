@@ -12,7 +12,8 @@
   "dependencies": {
     "react-router": "0.13.x",
     "react": "0.13.x",
-    "normalize.css": "~3.0.3"
+    "normalize.css": "~3.0.3",
+    "font-awesome": "^4.4.0"
   },
   "devDependencies": {
     "babel": "^5.0.0",

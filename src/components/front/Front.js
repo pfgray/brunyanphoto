@@ -40,6 +40,14 @@ var Front = React.createClass({
       <div className="front">
         {wallpapers}
         <div className="overlay">
+          <div className='social'>
+            <a href='https://www.facebook.com/BethanneRunyanPhotography'>
+              <i className='fa fa-facebook-official'></i>
+            </a>
+            <a href='https://instagram.com/bethannerunyan/'>
+              <i className='fa fa-instagram'></i>
+            </a>
+          </div>
           <div className='logo'>
               <div className='top'>Bethanne Runyan</div>
               {/*

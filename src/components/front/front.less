@@ -33,6 +33,8 @@ img {
   width:300px;
 }
 
+@light-text-shadow: 0 0 70px #000;
+
 .logo{
     position: absolute;
     bottom:1em;
@@ -46,14 +48,14 @@ img {
     width:500px;
     font-family: 'Pinyon Script' 'andalus', cursive;
     font-size: 3em;
-    
+
     //border-radius: 100%;
     padding: 0 0.5em;
     //border:1px solid red;
     //background-image: -webkit-radial-gradient(circle, black, rgba(0,0,0,0));
     //background-color: rgba(0,0,0,0.5);
-    text-shadow: 0 0 70px #000;
-    
+    text-shadow: @light-text-shadow;
+
     .top{
         //font-weight: 500;
         border-bottom: 1px solid #fff;
@@ -72,10 +74,25 @@ img {
         font-family:sans-serif;
         margin: 0;
         display:inline-block;
-        
+
         transition: color 0.5s ease-out;
         &:hover{
             color: #FEFB00;
         }
     }
+}
+
+.social{
+  text-align:right;
+  padding-right:1em;
+  padding-top:1em;
+
+  i {
+    color: #fff;
+    font-size: 1.75em;
+    margin-right: 1em;
+    text-shadow: @light-text-shadow;
+    cursor:pointer;
+  }
+
 }

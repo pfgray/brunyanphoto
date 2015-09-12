@@ -59,8 +59,11 @@ module.exports = {
       test: /\.less/,
       loader: 'style-loader!css-loader!less-loader'
     }, {
-      test: /\.(png|jpg|woff|woff2|ttf)$/,
+      test: /\.(png|jpg)$/,
       loader: 'url-loader?limit=8192'
+    }, {
+      test: /\.(eot.*|woff.*|ttf.*|svg.*)$/,
+      loader: "file-loader"
     }]
   }
 };
