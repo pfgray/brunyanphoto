@@ -1,13 +1,11 @@
 import React from 'react/addons';
 
+import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
 const images = [
   require('../../images/scrolling/image1.jpg'),
-  require('../../images/scrolling/image2.jpg'),
-  require('../../images/scrolling/image3.jpg'),
-  require('../../images/scrolling/image4.jpg'),
-  require('../../images/scrolling/image5.jpg')
+  require('../../images/scrolling/image2.jpg')
 ];
 
 const Front = React.createClass({
@@ -18,11 +16,21 @@ const Front = React.createClass({
   },
   componentDidMount() {
     setInterval(this.shiftImage, 5000);
+    ImageService.getLandscapeImages()
+      .then(a => {
+        console.log('woot!, got album: ', a.images);
+        a.images
+          .map(image => image.link)
+          .forEach(url => images.push(url));
+      });
   },
   shiftImage() {
-    this.setState({
-      currentImage: (this.state.currentImage + 1) % images.length
-    });
+    console.log('shifting images:', images);
+    if(images.length > 0) {
+      this.setState({
+        currentImage: (this.state.currentImage + 1) % images.length
+      });
+    }
   },
   render() {
 

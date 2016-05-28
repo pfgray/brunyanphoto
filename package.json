@@ -14,8 +14,10 @@
     "font-awesome": "^4.4.0",
     "less": "^2.7.1",
     "normalize.css": "~3.0.3",
+    "q": "^1.4.1",
     "react": "0.13.x",
-    "react-router": "0.13.x"
+    "react-router": "0.13.x",
+    "superagent": "^2.0.0-alpha.3"
   },
   "devDependencies": {
     "babel": "^5.0.0",
