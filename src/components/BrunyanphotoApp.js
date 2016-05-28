@@ -1,15 +1,13 @@
-'use strict';
-
-var React = require('react');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
+import React from 'react';
+import Router from 'react-router';
+const RouteHandler = Router.RouteHandler;
 
 // CSS
-require('normalize.css');
-require('../styles/main.css');
+import 'normalize.css';
+import '../styles/main.less';
 
-var BrunyanphotoApp = React.createClass({
-  render: function() {
+const BrunyanphotoApp = React.createClass({
+  render() {
     return (
       <div className="main">
         <RouteHandler/>

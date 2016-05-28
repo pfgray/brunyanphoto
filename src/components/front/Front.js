@@ -1,6 +1,5 @@
 import React from 'react/addons';
 
-import './front.less';
 import logo from '../../images/brp_logo_white.png';
 
 const images = [
