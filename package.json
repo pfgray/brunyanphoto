@@ -10,10 +10,12 @@
   "mainInput": "main",
   "mainOutput": "main",
   "dependencies": {
-    "react-router": "0.13.x",
-    "react": "0.13.x",
+    "file-loader": "^0.8.5",
+    "font-awesome": "^4.4.0",
+    "less": "^2.7.1",
     "normalize.css": "~3.0.3",
-    "font-awesome": "^4.4.0"
+    "react": "0.13.x",
+    "react-router": "0.13.x"
   },
   "devDependencies": {
     "babel": "^5.0.0",
