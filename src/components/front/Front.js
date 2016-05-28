@@ -1,10 +1,9 @@
-'use strict';
+import React from 'react/addons';
 
-var React = require('react/addons');
+import './front.less';
+import logo from '../../images/brp_logo_white.png';
 
-require('./front.less');
-
-var images = [
+const images = [
   require('../../images/scrolling/image1.jpg'),
   require('../../images/scrolling/image2.jpg'),
   require('../../images/scrolling/image3.jpg'),
@@ -12,29 +11,29 @@ var images = [
   require('../../images/scrolling/image5.jpg')
 ];
 
-var Front = React.createClass({
-  getInitialState: function(){
+const Front = React.createClass({
+  getInitialState() {
     return {
       currentImage: 0
     };
   },
-  componentDidMount: function(){
+  componentDidMount() {
     setInterval(this.shiftImage, 5000);
   },
-  shiftImage: function(){
+  shiftImage() {
     this.setState({
       currentImage: (this.state.currentImage + 1) % images.length
     });
   },
-  render: function() {
+  render() {
 
-    var wallpapers = images.map(function(image, i){
-      var style = {
+    const wallpapers = images.map((image, i) => {
+      const style = {
         opacity: this.state.currentImage === i ? 1 : 0,
         backgroundImage: 'url(' + image + ')'
       };
       return (<div className="wallpaper" style={style}></div>);
-    }.bind(this));
+    });
 
     return (
       <div className="front">
@@ -49,17 +48,7 @@ var Front = React.createClass({
             </a>
           </div>
           <div className='logo'>
-              <div className='top'>Bethanne Runyan</div>
-              {/*
-              <div className="middle">
-                  <div className="nav">
-                      <a href="/me">me</a>
-                      <a href="/me">photos</a>
-                      <a href="/me">contact</a>
-                  </div>
-              </div>
-              */}
-              <div className='bottom'>Photography</div>
+            <img className='logo' src={logo} />
           </div>
         </div>
       </div>

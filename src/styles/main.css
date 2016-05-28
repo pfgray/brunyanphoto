@@ -25,13 +25,6 @@ html, body, #content, .main {
   color: #fff;
 }
 
-.main img {
-  width: 103px;
-  height: 89px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
 /* transitions */
 
 .fade-enter {
