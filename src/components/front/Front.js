@@ -1,9 +1,11 @@
 import React from 'react/addons';
+import Q from 'q';
 
 import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
-const images = [];
+const landscapeImages = [];
+const portraitImages = [];
 
 const Front = React.createClass({
   getInitialState() {
@@ -12,18 +14,26 @@ const Front = React.createClass({
     };
   },
   componentDidMount() {
-    ImageService.getLandscapeImages()
-      .then(a => {
-        console.log('woot!, got album: ', a.images);
-        a.images
-          .map(image => image.link)
-          .forEach(url => images.push(url));
-        this.shiftImage();
-        setInterval(this.shiftImage, 5000);
-      });
+    Q.all([ImageService.getLandscapeAlbum(), ImageService.getPortraitAlbum()])
+    .spread((landscape, portrait) => {
+      console.log('got albums: ', landscape, portrait);
+
+      portrait.images
+        .map(image => image.link)
+        .forEach(url => portraitImages.push(url));
+      landscape.images
+        .map(image => image.link)
+        .forEach(url => landscapeImages.push(url));
+      this.shiftImage();
+      setInterval(this.shiftImage, 5000);
+    });
+    // ImageService.getLandscapeImages()
+    //   .then(a => {
+    //
+    //   });
   },
   shiftImage() {
-    console.log('shifting images:', images);
+    console.log('shifting images:', landscapeImages);
     if(images.length > 0) {
       this.setState({
         currentImage: (this.state.currentImage + 1) % images.length
@@ -31,7 +41,7 @@ const Front = React.createClass({
     }
   },
   render() {
-
+    // oh, this is why they all load together...
     const wallpapers = images.map((image, i) => {
       const style = {
         opacity: this.state.currentImage === i ? 1 : 0,

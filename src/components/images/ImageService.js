@@ -23,7 +23,7 @@ const ImageService = {
       request.get(url)
         .set('Authorization', 'Client-Id ' + clientId));
   },
-  getLandscapeImages() {
+  getLandscapeAlbum() {
     return this.getAlbum(landscapeAlbumId);
   },
   getPortraitAlbum() {
