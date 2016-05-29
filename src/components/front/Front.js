@@ -3,10 +3,7 @@ import React from 'react/addons';
 import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
-const images = [
-  require('../../images/scrolling/image1.jpg'),
-  require('../../images/scrolling/image2.jpg')
-];
+const images = [];
 
 const Front = React.createClass({
   getInitialState() {
@@ -15,13 +12,14 @@ const Front = React.createClass({
     };
   },
   componentDidMount() {
-    setInterval(this.shiftImage, 5000);
     ImageService.getLandscapeImages()
       .then(a => {
         console.log('woot!, got album: ', a.images);
         a.images
           .map(image => image.link)
           .forEach(url => images.push(url));
+        this.shiftImage();
+        setInterval(this.shiftImage, 5000);
       });
   },
   shiftImage() {
