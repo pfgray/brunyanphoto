@@ -5,9 +5,9 @@ import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
 const FadeDuration = 2000; // ms
-const SwitchInterval = 1000; // ms
+const SwitchInterval = 3000; // ms
 
-const getWallpaperStyleForUrl = (image, text, fading) => {
+const getWallpaperStyleForUrl = (image, fading) => {
   if(!image) {
     return null;
   }
@@ -16,8 +16,7 @@ const getWallpaperStyleForUrl = (image, text, fading) => {
     transition: fading ? 'opacity ' + FadeDuration + 'ms ease-out' : 'none',
     backgroundImage: 'url(' + image + ')'
   };
-  return <div className="wallpaper" style={style}>
-    <h1 style={{ color: 'white' }}>{text}</h1></div>;
+  return <div className="wallpaper" style={style}></div>;
 };
 
 const Front = React.createClass({
@@ -38,8 +37,8 @@ const Front = React.createClass({
     .then(album => {
       this.carousel = Carousel.create(album.images);
       this.setState({
-        frontImage: album.images.map(i => i.link)[0],
-        backImage: album.images.map(i => i.link)[1]
+        frontImage: this.carousel.getNextImage(),
+        backImage: this.carousel.getNextImage()
       });
       this.shiftImage();
     });
@@ -61,8 +60,8 @@ const Front = React.createClass({
   render() {
 
     const wallpapers = [
-      getWallpaperStyleForUrl(this.state.backImage, 'Back Image'),
-      getWallpaperStyleForUrl(this.state.frontImage, 'Front Image', this.state.fading)
+      getWallpaperStyleForUrl(this.state.backImage),
+      getWallpaperStyleForUrl(this.state.frontImage, this.state.fading)
     ];
 
     return (
