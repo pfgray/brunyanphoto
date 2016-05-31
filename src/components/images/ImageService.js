@@ -2,8 +2,7 @@ import Q from 'q';
 import request from 'superagent';
 
 const clientId = window.app_config.imgur.client_id;
-const landscapeAlbumId = window.app_config.imgur.landscape_album;
-const portraitAlbumId = window.app_config.imgur.portrait_album;
+const mainAlbumId = window.app_config.imgur.main_album;
 
 function requestToPromise(req) {
   const deferred = Q.defer();
@@ -23,11 +22,8 @@ const ImageService = {
       request.get(url)
         .set('Authorization', 'Client-Id ' + clientId));
   },
-  getLandscapeAlbum() {
-    return this.getAlbum(landscapeAlbumId);
-  },
-  getPortraitAlbum() {
-    return this.getAlbum(portraitAlbumId);
+  getMainAlbum() {
+    return this.getAlbum(mainAlbumId);
   },
   getAlbum(id) {
     return this.getWithAuth(`https://api.imgur.com/3/album/${id}`)

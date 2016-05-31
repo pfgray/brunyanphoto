@@ -1,6 +1,6 @@
 import React from 'react/addons';
-import Q from 'q';
 
+import Carousel from '../carousel/Carousel';
 import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
@@ -25,9 +25,7 @@ const Front = React.createClass({
     return {
       frontImage: null,
       backImage: null,
-      fading: false,
-      landscapeImages: [],
-      portraitImages: []
+      fading: false
     };
   },
   componentDidMount() {
@@ -36,29 +34,25 @@ const Front = React.createClass({
     //   set frontImage to fading,
     //   back Image to fading in
     // in 5000 ms, switch the photos and repeat
-    Q.all([ImageService.getLandscapeAlbum(), ImageService.getPortraitAlbum()])
-    .spread((landscape, portrait) => {
-      console.log('got albums: ', landscape, portrait);
+    ImageService.getMainAlbum()
+    .then(album => {
+      this.carousel = Carousel.create(album.images);
       this.setState({
-        frontImage: portrait.images.map(i => i.link)[0],
-        backImage: portrait.images.map(i => i.link)[1],
-        landscapeImages: portrait.images.map(i => i.link),
-        portraitImages: landscape.images.map(i => i.link)
+        frontImage: album.images.map(i => i.link)[0],
+        backImage: album.images.map(i => i.link)[1]
       });
       this.shiftImage();
     });
   },
   shiftImage() {
     // change front Image to fade
-    console.log('shifting image: ', this.state);
     this.setState({
       fading: true
     });
     setTimeout(() => {
-      console.log('resetting...', this.state);
       this.setState({
         frontImage: this.state.backImage,
-        backImage: this.state.frontImage,
+        backImage: this.carousel.getNextImage(),
         fading: false
       });
       setTimeout(this.shiftImage, SwitchInterval);
