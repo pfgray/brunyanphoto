@@ -71,21 +71,61 @@ div.logo {
     }
 }
 
-.social{
+.header {
   text-align:right;
   padding-right:1em;
   padding-top:1em;
+  text-shadow: 2px 2px 8px #444;
 
   i {
     color: #fff;
     font-size: 1.75em;
-    margin-right: 1em;
+    // margin-right: 1em;
     text-shadow: @light-text-shadow;
     cursor:pointer;
   }
 
-  a:last-child i {
+  > a:last-child {
     margin-right: 0.5em;
+  }
+
+  a, .header-category {
+    vertical-align: middle;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+  }
+  > a, .header-category {
+    margin-right: 1em;
+    font-size: 1.25em;
+  }
+
+  .header-category {
+    position: relative;
+
+    .dropdown-content {
+      position: absolute;
+      top: 1.5em;
+      right: 0;
+      font-size: 0.85em;
+      width: 9em;
+      a {
+        display: block;
+        padding-top: 0.25em;
+      }
+
+      visibility: hidden;
+      opacity: 0;
+      transition-property: opacity, visibility;
+      transition-duration: .4s, 0s;
+      transition-delay: 0s, .4s;
+    }
+  }
+
+  .header-category:hover .dropdown-content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s, 0s;
   }
 
 }

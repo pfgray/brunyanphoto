@@ -68,7 +68,25 @@ const Front = React.createClass({
       <div className="front">
         {wallpapers}
         <div className="overlay">
-          <div className='social'>
+          <div className='header'>
+            <span className='header-category'>
+              <span>Portfolio</span>
+              <span className='dropdown-content'>
+                <a href="/hmm">Weddings</a>
+                <a href="/hmm">Maternity-Newborn</a>
+                <a href="/hmm">Seniors-Headshots</a>
+                <a href="/hmm">Families-Kids</a>
+              </span>
+            </span>
+            <a href='#'>Blog</a>
+            <span className='header-category'>
+              <span>About</span>
+              <span className='dropdown-content'>
+                <a href="/hmm">Bethanne</a>
+                <a href="/hmm">Contact</a>
+                <a href="/hmm">Reviews</a>
+              </span>
+            </span>
             <a href='https://www.facebook.com/BethanneRunyanPhotography'>
               <i className='fa fa-facebook-official'></i>
             </a>
