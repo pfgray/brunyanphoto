@@ -44,30 +44,29 @@ const Front = React.createClass({
       this.shiftImage();
     });
   },
+  componentWillUnmount() {
+    clearTimeout(this.timeout);
+  },
   shiftImage() {
     // change front Image to fade
     this.setState({
       fading: true
     });
-    setTimeout(() => {
+    this.timeout = setTimeout(() => {
       this.setState({
         frontImage: this.state.backImage,
         backImage: this.carousel.getNextImage(),
         fading: false
       });
-      setTimeout(this.shiftImage, SwitchInterval);
+      this.timeout = setTimeout(this.shiftImage, SwitchInterval);
     }, FadeDuration);
   },
   render() {
 
-    const wallpapers = [
-      getWallpaperStyleForUrl(this.state.backImage),
-      getWallpaperStyleForUrl(this.state.frontImage, this.state.fading)
-    ];
-
     return (
       <div className="front">
-        {wallpapers}
+        {getWallpaperStyleForUrl(this.state.backImage)}
+        {getWallpaperStyleForUrl(this.state.frontImage, this.state.fading)}
         <div className="overlay">
           <Header />
           <div className='logo'>
