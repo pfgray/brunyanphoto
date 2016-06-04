@@ -82,7 +82,13 @@ div.logo {
     font-size: 1.75em;
     // margin-right: 1em;
     text-shadow: @light-text-shadow;
-    cursor:pointer;
+    cursor: pointer;
+  }
+
+  a {
+    &:hover {
+      color: #ddd;
+    }
   }
 
   > a:last-child {
@@ -102,6 +108,7 @@ div.logo {
 
   .header-category {
     position: relative;
+    cursor: default;
 
     .dropdown-content {
       position: absolute;

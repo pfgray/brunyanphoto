@@ -1,23 +1,18 @@
-'use strict';
+import React from 'react';
+import { render } from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import BrunyanphotoApp from './BrunyanphotoApp';
 
-var BrunyanphotoApp = require('./BrunyanphotoApp');
-var React = require('react');
-var Router = require('react-router');
-var Route = Router.Route;
+import Front from './front/Front';
+import Weddings from './albums/Weddings';
 
-var Front = require('./front/Front');
+import 'font-awesome/css/font-awesome.css';
 
-require('font-awesome/css/font-awesome.css');
-
-
-var content = document.getElementById('content');
-
-var Routes = (
-  <Route handler={BrunyanphotoApp}>
-    <Route name="/" handler={Front}/>
-  </Route>
-);
-
-Router.run(Routes, Router.HistoryLocation, function (Handler) {
-  React.render(<Handler/>, content);
-});
+render((
+  <Router history={browserHistory}>
+    <Route path="/" component={BrunyanphotoApp}>
+      <IndexRoute component={Front} />
+      <Route path="/weddings" component={Weddings} />
+    </Route>
+  </Router>
+), document.getElementById('content'));

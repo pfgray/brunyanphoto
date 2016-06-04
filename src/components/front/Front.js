@@ -1,6 +1,7 @@
-import React from 'react/addons';
+import React from 'react';
 
 import Carousel from '../carousel/Carousel';
+import Header from './Header';
 import ImageService from '../images/ImageService.js';
 import logo from '../../images/brp_logo_white.png';
 
@@ -68,32 +69,7 @@ const Front = React.createClass({
       <div className="front">
         {wallpapers}
         <div className="overlay">
-          <div className='header'>
-            <span className='header-category'>
-              <span>Portfolio</span>
-              <span className='dropdown-content'>
-                <a href="/hmm">Weddings</a>
-                <a href="/hmm">Maternity-Newborn</a>
-                <a href="/hmm">Seniors-Headshots</a>
-                <a href="/hmm">Families-Kids</a>
-              </span>
-            </span>
-            <a href='#'>Blog</a>
-            <span className='header-category'>
-              <span>About</span>
-              <span className='dropdown-content'>
-                <a href="/hmm">Bethanne</a>
-                <a href="/hmm">Contact</a>
-                <a href="/hmm">Reviews</a>
-              </span>
-            </span>
-            <a href='https://www.facebook.com/BethanneRunyanPhotography'>
-              <i className='fa fa-facebook-official'></i>
-            </a>
-            <a href='https://instagram.com/bethannerunyan/'>
-              <i className='fa fa-instagram'></i>
-            </a>
-          </div>
+          <Header />
           <div className='logo'>
             <img className='logo' src={logo} />
           </div>
