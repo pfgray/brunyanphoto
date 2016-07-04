@@ -3,7 +3,7 @@ import React from 'react';
 import Carousel from '../carousel/Carousel';
 import Header from './Header';
 import ImageService from '../images/ImageService.js';
-import logo from '../../images/brp_logo_white.png';
+import logo from '../../images/brphoto-white.png';
 
 const FadeDuration = 2000; // ms
 const SwitchInterval = 3000; // ms
@@ -58,7 +58,7 @@ const Front = React.createClass({
         backImage: this.carousel.getNextImage(),
         fading: false
       });
-      //this.timeout = setTimeout(this.shiftImage, SwitchInterval);
+      this.timeout = setTimeout(this.shiftImage, SwitchInterval);
     }, FadeDuration);
   },
   render() {
