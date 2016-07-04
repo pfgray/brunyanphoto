@@ -58,7 +58,7 @@ const Front = React.createClass({
         backImage: this.carousel.getNextImage(),
         fading: false
       });
-      this.timeout = setTimeout(this.shiftImage, SwitchInterval);
+      //this.timeout = setTimeout(this.shiftImage, SwitchInterval);
     }, FadeDuration);
   },
   render() {
