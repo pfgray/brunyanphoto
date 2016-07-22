@@ -18,27 +18,9 @@ class Header extends React.Component {
   render() {
     return (
       <div className={'header' + (this.state.open ? ' open' : '')}>
-        <button className='hamburger' onClick={this.toggle}>
-          <i className='fa fa-bars'></i>
-        </button>
-        <span className='header-category'>
-          <span>Portfolio</span>
-          <span className='dropdown-content'>
-            <Link to="/weddings">Weddings</Link>
-            <a href="/hmm">Maternity-Newborn</a>
-            <a href="/hmm">Seniors-Headshots</a>
-            <a href="/hmm">Families-Kids</a>
-          </span>
-        </span>
+        <Link to='/portfolio'>Portfolio</Link>
         <a href='#'>Blog</a>
-        <span className='header-category'>
-          <span>About</span>
-          <span className='dropdown-content'>
-            <a href="/hmm">Bethanne</a>
-            <a href="/hmm">Contact</a>
-            <a href="/hmm">Reviews</a>
-          </span>
-        </span>
+        <Link to='/about'>About</Link>
         <div className='social'>
           <a href='https://www.facebook.com/BethanneRunyanPhotography'>
             <i className='fa fa-facebook-official'></i>
