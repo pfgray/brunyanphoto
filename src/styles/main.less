@@ -1,6 +1,8 @@
 @import './layout.less';
 @import '../components/front/front.less';
 @import '../components/albums/album.less';
+@import '../components/albums/subpage.less';
+@import '../components/portfolio/portfolio.less';
 
 @color-primary: #36384C;
 
@@ -51,4 +53,12 @@ html, body, #content, .main {
 
 .fade-leave.fade-leave-active {
   opacity: 0.01;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

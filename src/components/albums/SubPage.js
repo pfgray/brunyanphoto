@@ -2,12 +2,11 @@ import React from 'react';
 
 import Header from '../front/Header';
 
-const Weddings = ({ children }) => (
-  <div className='subPage'>
-    <div>wutttt</div>
+const SubPage = ({ children }) => (
+  <div className='sub-page'>
     <Header />
     {children}
   </div>
 );
 
-export default Weddings;
+export default SubPage;
