@@ -4,20 +4,32 @@ import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-ro
 import BrunyanphotoApp from './BrunyanphotoApp';
 
 import Front from './front/Front';
-import Weddings from './albums/Weddings';
 import SubPage from './albums/SubPage';
 import Portfolio from './portfolio/Portfolio';
+import { createScrollAlbum } from './albums/ScrollAlbum';
 
 import 'font-awesome/css/font-awesome.css';
 
+const routes = {
+  path: '/',
+  component: BrunyanphotoApp,
+  indexRoute: {
+    component: Front
+  },
+  childRoutes: [{
+    path: '/portfolio',
+    component: SubPage,
+    indexRoute: {
+      component: Portfolio
+    },
+    childRoutes: window.app_config.portfolio
+      .map(p => ({
+        path: p.link,
+        component: createScrollAlbum(p.title, p.id)
+      }))
+  }]
+};
+
 render((
-  <Router history={hashHistory}>
-    <Route path="/" component={BrunyanphotoApp}>
-      <IndexRoute component={Front} />
-      <Route path="/portfolio" component={SubPage}>
-        <IndexRoute component={Portfolio} />
-        <Route path="/weddings" component={Weddings} />
-      </Route>
-    </Route>
-  </Router>
+  <Router history={hashHistory} routes={routes} />
 ), document.getElementById('content'));

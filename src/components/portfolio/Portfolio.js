@@ -3,23 +3,7 @@ import Q from 'q';
 import ImageService from '../images/ImageService';
 import PortfolioLink from './PortfolioLink';
 
-const ALBUMS = [{
-  label: 'Weddings',
-  id: '9k9yU',
-  link: '/weddings'
-}, {
-  label: 'Seniors/Headshots',
-  id: 'aY0TY',
-  link: '/headshots'
-}, {
-  label: 'Kids/Families',
-  id: 'QS098',
-  link: '/families'
-}, {
-  label: 'Maternity/Newborn',
-  id: 'Nt7FD',
-  link: '/newborn'
-}];
+const ALBUMS = window.app_config.portfolio;
 // go get each album, then create links for them.
 
 const Portfolio = React.createClass({
