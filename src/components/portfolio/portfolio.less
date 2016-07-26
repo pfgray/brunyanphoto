@@ -7,10 +7,15 @@
   margin-top: 2em;
 
   .portfolio-link {
-    width: 25%;
+    width: ~"calc(25% - 3px)";
+    margin-right: 4px;
     display: inline-block;
     text-align: center;
     font-size: 1.5em;
+
+    &:last-child {
+      margin-right: 0;
+    }
 
     a {
       color: @color-primary;
