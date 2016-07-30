@@ -1,7 +1,7 @@
 # html5 pushstate (history) support:
 <ifModule mod_rewrite.c>
     RewriteEngine On
-    RewriteCond %{REQUEST_FILENAME} !\.(js|css|gif|jpg|jpeg|png|ico|swf|pdf|html|php|json|woff|woff2)$
+    RewriteCond %{REQUEST_FILENAME} !\.(js|css|gif|jpg|jpeg|png|ico|swf|pdf|html|php|json|woff|woff2|otf)$
     RewriteCond %{REQUEST_URI} !^index
     RewriteRule (.*) index.html [L]
 </ifModule>
