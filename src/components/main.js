@@ -35,5 +35,5 @@ const routes = {
 };
 
 render((
-  <Router routes={routes} history={hashHistory} /> //history={browserHistory} />
+  <Router routes={routes} history={browserHistory} /> //history={hashHistory} />
 ), document.getElementById('content'));

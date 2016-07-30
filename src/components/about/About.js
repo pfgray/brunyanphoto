@@ -1,5 +1,7 @@
 import React from 'react';
 
+import EmailForm from './EmailForm';
+
 const About = () => (
   <div className="about">
     <div className="photo-container">
@@ -21,6 +23,7 @@ const About = () => (
       <li>I love mud, dirt, and sticks though</li>
       <li>And of course…as I’m sure you can guess, I love my Nikon</li>
     </ul>
+    <EmailForm />
   </div>
 );
 
