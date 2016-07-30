@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory, hashHistory } from 'react-router';
+import { Router, browserHistory, hashHistory } from 'react-router';
 import BrunyanphotoApp from './BrunyanphotoApp';
 
 import Front from './front/Front';
 import SubPage from './albums/SubPage';
+import About from './about/About';
 import Portfolio from './portfolio/Portfolio';
 import { createScrollAlbum } from './albums/ScrollAlbum';
 
@@ -26,10 +27,13 @@ const routes = {
       .map(p => ({
         path: p.link,
         component: createScrollAlbum(p.title, p.id)
-      }))
+      })).concat({
+        path: '/about',
+        component: About
+      })
   }]
 };
 
 render((
-  <Router history={browserHistory} routes={routes} />
+  <Router routes={routes} history={hashHistory} /> //history={browserHistory} />
 ), document.getElementById('content'));
