@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageService from '../images/ImageService';
-import Gallery from 'react-photo-gallery';
+//import Gallery from 'react-photo-gallery';
 
 const ScrollAlbum = React.createClass({
   getInitialState() {

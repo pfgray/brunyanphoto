@@ -2,22 +2,35 @@
 .about {
   font-family: 'GlacialIndifference';
 
-  max-width: 35em;
+  max-width: 50em;
   margin: 0 auto;
 
-  .photo-container {
-    margin: 1em 0;
+  .split {
+    margin-top: 5em;
+
+    .left, .right {
+       width: 47%;
+       display:inline-block;
+       height: 33em;
+       vertical-align: top;
+       &:first-child {
+          margin-right: 6%;
+       }
+    }
+    .left {
+      font-size: 1.15em;
+    }
   }
 
-  img {
-    //float: left;
-    height: 7em;
-    display: inline-block;
-    vertical-align: bottom;
+  .profile-pic {
+    width: 100%;
   }
+
   h1 {
     display: inline-block;
     margin: 0 0 0 0.5em;
+    font-family: Allura;
+    font-weight: 100;
   }
 
   input, textarea, button {
