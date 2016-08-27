@@ -19,7 +19,7 @@ class Header extends React.Component {
     return (
       <div className={'header' + (this.state.open ? ' open' : '')}>
         <Link to='/portfolio'>Portfolio</Link>
-        <a href='#'>Blog</a>
+        <Link to='/pricing'>Pricing</Link>
         <Link to='/about'>About</Link>
         <div className='social'>
           <a href='https://www.facebook.com/BethanneRunyanPhotography'>
