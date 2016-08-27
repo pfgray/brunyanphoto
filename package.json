@@ -16,6 +16,7 @@
     "q": "^1.4.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
+    "react-photo-gallery": "^4.2.12",
     "react-router": "^2.4.1",
     "superagent": "^2.0.0-alpha.3"
   },
