@@ -1,6 +1,6 @@
 import React from 'react';
 
-const About = () => (
+const EmailForm = () => (
   <div className="email">
     <div className="prompt">Write Beth a message.</div>
     <input name="name" placeholder="Name"/>
@@ -10,4 +10,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default EmailForm;
