@@ -169,6 +169,11 @@
       "from": "js-tokens@>=1.0.1 <2.0.0",
       "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-1.0.3.tgz"
     },
+    "json-loader": {
+      "version": "0.5.4",
+      "from": "json-loader@latest",
+      "resolved": "https://registry.npmjs.org/json-loader/-/json-loader-0.5.4.tgz"
+    },
     "jss": {
       "version": "3.11.1",
       "from": "jss@>=3.2.0 <4.0.0",

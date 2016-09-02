@@ -1,0 +1,46 @@
+[{
+  "title": "Wedding Packages",
+  "subtitle": "Packages begin at $1100",
+  "bullets": [{
+    "emphasis": "6 hours",
+    "sub": " of coverage"
+  },{
+    "emphasis": "High-resolution files",
+    "sub": " of all edited images (200-500)"
+  },{
+    "emphasis": "Online password-protected photo gallery",
+    "sub": " with shopping cart to share with family and friends"
+  },{
+    "emphasis": "Lifetime printing release",
+    "sub": " allowing you to make prints of all photographs"
+  },{
+    "emphasis": "30 day guarantee",
+    "sub": " - lose your photo files and I'll replace them free of charge"
+  },{
+    "emphasis": "Engagement session"
+  }]
+},{
+  "title": "Portrait Session",
+  "subtitle": "Session Fees begin at $75",
+  "bullets": [{
+    "emphasis": "1 Hour",
+    "sub": " on-location photo session"
+  },{
+    "emphasis": "High-resolution preview gallery",
+    "sub": " with 10 - 20 images"
+  },{
+    "emphasis": "Online password-protected photo gallery",
+    "sub": " with shopping cart to share with family and friends"
+  }],
+  "descriptions": [
+    "Session fees do not include digital files or prints",
+    "Prints, products and digital files are available to purchase as either collections or a la carte",
+    "Bethanne Runyan Photography clients typically invest $150-$300 on their custom portrait experience"
+  ]
+},{
+  "title": "Military Families",
+  "descriptions": [
+    "In honor of those who serve our country, Bethanne Runyan Photography is happy to provide a free pre-deployment and welcome home session.",
+    "These sessions are provided completely free and there is never an obligation to purchase anything, although families do often purchase additional portraits or digital files."
+  ]
+}]

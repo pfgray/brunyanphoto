@@ -11,6 +11,7 @@
   "mainOutput": "main",
   "dependencies": {
     "font-awesome": "^4.4.0",
+    "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "normalize.css": "~3.0.3",
     "q": "^1.4.1",
