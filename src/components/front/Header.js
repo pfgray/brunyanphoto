@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import logo from '../../images/brphoto.png';
 
 class Header extends React.Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class Header extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
   toggle() {
-    console.log('toggling?');
     this.setState({
       open: !this.state.open
     });
@@ -19,6 +19,7 @@ class Header extends React.Component {
     const active = 'active';
     return (
       <div className={'header' + (this.state.open ? ' open' : '')}>
+        <img className="header-logo" src={logo} />
         <Link to='/portfolio' activeClassName={active}>Portfolio</Link>
         <Link to='/pricing' activeClassName={active}>Pricing</Link>
         <Link to='/about' activeClassName={active}>About</Link>
