@@ -19,11 +19,7 @@ const routes = {
     component: Front
   },
   childRoutes: [{
-    path: '/portfolio',
     component: SubPage,
-    indexRoute: {
-      component: Portfolio
-    },
     childRoutes: window.app_config.portfolio
       .map(p => ({
         path: p.link,
@@ -34,6 +30,9 @@ const routes = {
       }).concat({
         path: '/pricing',
         component: Pricing
+      }).concat({
+        path: '/portfolio',
+        component: Portfolio
       })
   }]
 };

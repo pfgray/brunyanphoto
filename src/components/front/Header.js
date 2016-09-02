@@ -16,11 +16,12 @@ class Header extends React.Component {
     });
   }
   render() {
+    const active = 'active';
     return (
       <div className={'header' + (this.state.open ? ' open' : '')}>
-        <Link to='/portfolio'>Portfolio</Link>
-        <Link to='/pricing'>Pricing</Link>
-        <Link to='/about'>About</Link>
+        <Link to='/portfolio' activeClassName={active}>Portfolio</Link>
+        <Link to='/pricing' activeClassName={active}>Pricing</Link>
+        <Link to='/about' activeClassName={active}>About</Link>
         <div className='social'>
           <a href='https://www.facebook.com/BethanneRunyanPhotography'>
             <i className='fa fa-facebook-official'></i>
