@@ -34,14 +34,39 @@
 
 div.logo {
   position: absolute;
-  bottom: 2em;
+  bottom: 1em;
   right: 2em;
   height: 7em;
+
+  @media @screen-xs {
+    height:4em;
+  }
 
   img.logo {
     height: 100%;
   }
 
+}
+
+.overlay > .social {
+  display:none;
+  @media @screen-sm {
+    display: block;
+  }
+  @media @screen-xs {
+    display: block;
+    a {
+      font-size: 1.25em;
+    }
+  }
+  position: absolute;
+  bottom: 1em;
+  left:2em;
+  a {
+    color: white;
+    font-size:2em;
+    margin-right: 1em;
+  }
 }
 
 .nav{
@@ -59,6 +84,7 @@ div.logo {
     }
   }
 }
+
 
 .header {
   text-align: center;
@@ -138,30 +164,20 @@ div.logo {
   }
 
   @media @screen-sm {
-    text-align: left;
-
-    *,a, .header-category {
-      display: none;
-      text-align: right;
+    a {
+      display:inline-block;
+      width: calc(100% / 3);
+      margin:0;
     }
-    a,.header-category {
-      padding: 0.5em;
-      margin: 0;
+    .social {
+      display:none;
     }
-    button.hamburger {
-      display: inline-block;
-    }
+  }
 
-    &.open {
-      background-color: rgba(0,0,0,0.75);
-
-      * > {
-        display: block;
-      }
-
-      .hamburger i:before {
-        content: "\f00d";
-      }
+  @media @screen-xs {
+    text-align: center;
+    .social {
+      display:none;
     }
   }
 

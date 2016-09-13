@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Social from './Social';
 
 class Header extends React.Component {
   constructor(props) {
@@ -10,7 +11,6 @@ class Header extends React.Component {
     this.toggle = this.toggle.bind(this);
   }
   toggle() {
-    console.log('toggling?');
     this.setState({
       open: !this.state.open
     });
@@ -22,14 +22,7 @@ class Header extends React.Component {
         <Link to='/portfolio' activeClassName={active}>Portfolio</Link>
         <Link to='/pricing' activeClassName={active}>Pricing</Link>
         <Link to='/about' activeClassName={active}>About</Link>
-        <div className='social'>
-          <a href='https://www.facebook.com/BethanneRunyanPhotography'>
-            <i className='fa fa-facebook-official'></i>
-          </a>
-          <a href='https://instagram.com/bethannerunyan/'>
-            <i className='fa fa-instagram'></i>
-          </a>
-        </div>
+        <Social />
       </div>
     );
   }

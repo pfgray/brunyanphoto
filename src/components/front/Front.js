@@ -4,6 +4,7 @@ import Carousel from '../carousel/Carousel';
 import Header from './Header';
 import ImageService from '../images/ImageService.js';
 import logo from '../../images/brphoto-white.png';
+import Social from './Social';
 
 const FadeDuration = 2000; // ms
 const SwitchInterval = 3000; // ms
@@ -69,6 +70,7 @@ const Front = React.createClass({
         {getWallpaperStyleForUrl(this.state.frontImage, this.state.fading)}
         <div className="overlay">
           <Header />
+          <Social />
           <div className='logo'>
             <img className='logo' src={logo} />
           </div>

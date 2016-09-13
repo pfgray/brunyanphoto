@@ -16,7 +16,7 @@ module.exports = {
 
   cache: true,
   debug: true,
-  devtool: 'sourcemap',
+  devtool: '#inline-source-map',
   entry: [
       'webpack/hot/only-dev-server',
       './src/components/main.js'
