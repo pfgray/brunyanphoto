@@ -1,4 +1,4 @@
-import isMobile from '../detectMobile';
+import { convertLink } from '../detectMobile';
 
 const isPortrait = i => i.height > i.width;
 const isLandscape = i => i.width > i.height;
@@ -24,22 +24,10 @@ const CarouselFactory = {
       return portraitImages[portraitIdx++ % portraitImages.length].link;
     }
 
-    const convertToMobileOrRegular = function(link) {
-      if(isMobile()) {
-        const i = link.lastIndexOf('.');
-        const idAndExt = [link.slice(0, i), link.slice(i + 1)];
-        console.log('parsed:', idAndExt);
-        console.log('joined:', idAndExt.join('l.'));
-        return idAndExt.join('l.');
-      } else {
-        return link;
-      }
-    }
-
     return {
       getNextImage() {
         const pic = getPortraitOrLandscape();
-        return convertToMobileOrRegular(pic);
+        return convertLink(pic);
       }
     };
   }
