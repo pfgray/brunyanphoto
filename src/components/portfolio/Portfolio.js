@@ -2,6 +2,7 @@ import React from 'react';
 import Q from 'q';
 import ImageService from '../images/ImageService';
 import PortfolioLink from './PortfolioLink';
+import { convertLink } from '../detectMobile';
 
 const ALBUMS = window.app_config.portfolio;
 // go get each album, then create links for them.
@@ -20,7 +21,7 @@ const Portfolio = React.createClass({
   },
   render() {
     const albums = this.state.albums.map(a => (
-      <PortfolioLink {...a} cover={a.images[0].link} key={a.label}/>
+      <PortfolioLink {...a} cover={convertLink(a.images[0].link)} key={a.label}/>
     ));
     return (
       <div className="portfolio">

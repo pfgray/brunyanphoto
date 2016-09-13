@@ -1,6 +1,7 @@
 import React from 'react';
 import ImageService from '../images/ImageService';
 import Gallery from 'react-photo-gallery';
+import { convertLink } from '../detectMobile';
 
 const ScrollAlbum = React.createClass({
   getInitialState() {
@@ -25,7 +26,7 @@ const ScrollAlbum = React.createClass({
         <div>loading...</div> :
         <Gallery photos={this.state.album.images.map(i =>
             Object.assign({}, i, {
-              src: i.link,
+              src: convertLink(i.link),
               aspectRatio: (i.width / i.height)
             }))}
             disableLightbox />
