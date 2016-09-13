@@ -12,7 +12,7 @@ const submit = function(){
   console.log('sending:', form);
 }
 
-const About = () => (
+const EmailForm = () => (
   <div className="email">
     <div className="prompt">Write Beth a message.</div>
     <input name="name" placeholder="Name" onChange={bindToForm('name')}/>
@@ -22,4 +22,4 @@ const About = () => (
   </div>
 );
 
-export default About;
+export default EmailForm;

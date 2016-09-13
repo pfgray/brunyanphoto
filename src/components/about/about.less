@@ -34,6 +34,9 @@
       p {
         margin:0;
       }
+      .email, .profile-pic {
+        display:none;
+      }
     }
   }
 
@@ -73,6 +76,27 @@
     margin: 1em 0;
     .prompt {
       margin-bottom: 0.5em;
+    }
+  }
+
+  @media @screen-sm {
+    width:90%;
+    .split {
+      .right {
+        display:none;
+      }
+      .left {
+        width: 100%;
+        margin: 0;
+        .email {
+          display: block;
+        }
+        .profile-pic {
+          display: block;
+          float:right;
+          width: 50%;
+        }
+      }
     }
   }
 }
