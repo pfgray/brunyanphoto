@@ -13,6 +13,7 @@
     "font-awesome": "^4.4.0",
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
+    "lockr": "^0.8.4",
     "normalize.css": "~3.0.3",
     "q": "^1.4.1",
     "react": "^15.1.0",
