@@ -62,7 +62,7 @@ mail("****@gmail.com","Message from: $name ($email)",$client_body, $headers . $c
 #mail("****@gmail.com","Message from: $name ($email)",$body);
 
 # Todo: also mail receipt to sender?
-#mail("****@gmail.com","Message from: $name ($email)",$body);
+#mail("@gmail.com","Message from: $name ($email)",$body);
 
 echo json_encode($json);
 ?>

@@ -39,7 +39,7 @@ const EmailForm = React.createClass({
     requestToPromise(
       request.post('/test/email.php')
         .send(this.state.form)
-    ).then(function(resp){
+    ).then(resp => {
       console.log("Got response: ", resp);
       this.setState({
         sending: false
