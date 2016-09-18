@@ -24,13 +24,12 @@ function requestToPromise(req) {
 
 const EmailForm = React.createClass({
   getInitialState() {
-    console.log("wut: ", Lockr.get(EMAIL_FORM_KEY));
     return {
       dirty: false,
       sentOnce: false,
       successful: false,
       sending: false,
-      form: Lockr.get(EMAIL_FORM_KEY)
+      form: Lockr.get(EMAIL_FORM_KEY) || {}
     };
   },
   bindToForm(member) {
