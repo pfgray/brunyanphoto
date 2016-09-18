@@ -10,12 +10,9 @@ $json = array('name' => $name, 'email' => $email, 'message' => $msg);
 
 $msg = nl2br($msg);
 
-
-
 // To send HTML mail, the Content-type header must be set
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
-
 
 // Email
 $message_quote = "
@@ -41,14 +38,14 @@ $receipt_body = "
   <title>Bethanne Runyan Photography</title>
 </head>
 <body>
-  <p>Thanks for contacting Bethanne Runyan Photography!</p>
-  <p>You sent:</p>
-  $message_quote
-  We'll respond right away!
+  <p>Thank you so much for contacting me. I am beyond thrilled that you found me and can't wait to capture some precious memories. We'll be in touch soon!</p>
+  <br />
+  <p>Love and Joy,</p>
+  <br />
+  <p>Bethanne</p>
 </body>
 </html>
 ";
-
 
 $destination_mail = "****@gmail.com";
 
