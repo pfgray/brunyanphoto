@@ -97,6 +97,15 @@ module.exports = function (grunt) {
           ]
         }]
       }
+    },
+
+    zip: {
+      'using-cwd': {
+        cwd: 'dist/',
+        // Files will zip to 'hello.js' and 'world.js'
+        src: ['dist/**/*'],
+        dest: 'brunyanphoto.zip'
+      }
     }
   });
 
@@ -113,7 +122,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('build', ['clean', 'copy', 'webpack']);
+  grunt.registerTask('build', ['clean', 'copy', 'webpack', 'zip']);
 
   grunt.registerTask('default', []);
 };

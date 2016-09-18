@@ -113,7 +113,7 @@ const EmailForm = React.createClass({
           {(() => {
             if (this.state.sending) {
               return 'sending... ';
-            } else if(this.state.successful){
+            } else if(this.state.successful) {
               return 'sent.';
             } else {
               return 'Send';
