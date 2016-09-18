@@ -69,8 +69,14 @@
     resize: none;
   }
 
-
-  input {
+  label.error {
+    + input, + textarea {
+      border-color: #d46464;
+    }
+  }
+  span.error {
+    margin-left: 0.5em;
+    color: #d46464;
   }
   .email {
     margin: 1em 0;

@@ -10,6 +10,7 @@
   "mainInput": "main",
   "mainOutput": "main",
   "dependencies": {
+    "classnames": "^2.2.5",
     "font-awesome": "^4.4.0",
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
