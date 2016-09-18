@@ -50,6 +50,7 @@
     "webpack-dev-server": "~1.10.0"
   },
   "scripts": {
-    "start": "grunt serve"
+    "start": "grunt serve",
+    "build": "grunt build"
   }
 }
