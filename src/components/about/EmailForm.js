@@ -28,6 +28,7 @@ const EmailForm = React.createClass({
     return {
       dirty: false,
       sentOnce: false,
+      successful: false,
       sending: false,
       form: Lockr.get(EMAIL_FORM_KEY)
     };
@@ -51,16 +52,18 @@ const EmailForm = React.createClass({
           sentOnce: true
         });
       }, _ => {
-        this.setState({ sending: true });
-        requestToPromise(
-          request.post('/test/email.php')
-            .send(this.state.form)
-        ).then(resp => {
-          console.log('Got response: ', resp);
-          this.setState({ sending: false });
-        }, resp => {
-          this.setState({ sending: false });
-        });
+        if(!this.state.sending && !this.state.successful) {
+          this.setState({ sending: true });
+          requestToPromise(
+            request.post('/test/email.php')
+              .send(this.state.form)
+          ).then(resp => {
+            console.log('Got response: ', resp);
+            this.setState({ sending: false, successful: true, form: {} });
+          }, resp => {
+            this.setState({ sending: false });
+          });
+        }
       });
   },
   validate(value, ...validations) {
@@ -98,7 +101,7 @@ const EmailForm = React.createClass({
           Email
           <span className="error">{showError ? vEmail.fold(_ => `(${_})`, _ => ''): ''}</span>
         </label>
-        <input name="email" placeholder="Email" onChange={this.bindToForm('email')}  value={this.state.form.name}/>
+        <input name="email" placeholder="Email" onChange={this.bindToForm('email')}  value={this.state.form.email}/>
 
         <label htmlFor="message" className={classNames({
           'error': vMessage.fold(_ => true, _ => false) && showError
@@ -106,10 +109,18 @@ const EmailForm = React.createClass({
           Message
           <span className="error">{showError ? vMessage.fold(_ => `(${_})`, _ => ''): ''}</span>
         </label>
-        <textarea name="message" placeholder="Message" rows="5" onChange={this.bindToForm('message')}  value={this.state.form.name}/>
+        <textarea name="message" placeholder="Message" rows="5" onChange={this.bindToForm('message')}  value={this.state.form.message}/>
 
-        <button type="submit" onClick={this.submit}>
-          {this.state.sending ? 'sending... ' : 'Send'}
+        <button type="submit" onClick={this.submit} disabled={this.state.successful || this.state.sending}>
+          {(() => {
+            if (this.state.sending) {
+              return 'sending... ';
+            } else if(this.state.successful){
+              return 'sent.';
+            } else {
+              return 'Send';
+            }
+          })()}
         </button>
       </div>
     );
