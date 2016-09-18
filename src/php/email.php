@@ -42,10 +42,10 @@ $receipt_body = "
 </head>
 <body>
   <p>Thank you so much for contacting me. I am beyond thrilled that you found me and can't wait to capture some precious memories. We'll be in touch soon!</p>
-  <br />
-  <p>Love and Joy,</p>
-  <br />
-  <p>Bethanne</p>
+  <p>
+    Love and Joy,<br />
+    Bethanne
+  </p>
 </body>
 </html>
 ";
@@ -55,8 +55,8 @@ $receipt_headers = "To: $name <$email>" . "\r\n" . "From: $service_name <$servic
 mail($email,"Thanks for contacting Bethanne Runyan Photography", $receipt_body, $headers . $receipt_headers);
 
 // mail the service!
-$service_headers = 'To: $service_name <$service_email>' . "\r\n" . "From: $name <$email>" . "\r\n";
-mail($service_email,"Message from: $name ($email)", $service_body, $headers . $service_headers);
+$service_headers = "To: $service_name <$service_email>" . "\r\n" . "From: $name <$email>" . "\r\n";
+mail($service_email, "Message from: $name ($email)", $service_body, $headers . $service_headers);
 
 echo json_encode($json);
 ?>

@@ -8,8 +8,6 @@ import classNames from 'classnames';
 // let's store this on the window
 const EMAIL_FORM_KEY = 'EMAIL_FORM_KEY';
 
-window.Lockr = Lockr;
-
 function requestToPromise(req) {
   const deferred = Q.defer();
   req.end((err, res) => {
@@ -58,6 +56,7 @@ const EmailForm = React.createClass({
               .send(this.state.form)
           ).then(resp => {
             console.log('Got response: ', resp);
+            Lockr.flush();
             this.setState({ sending: false, successful: true, form: {} });
           }, resp => {
             this.setState({ sending: false });
