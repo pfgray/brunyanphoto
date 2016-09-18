@@ -10,6 +10,9 @@ $json = array('name' => $name, 'email' => $email, 'message' => $msg);
 
 $msg = nl2br($msg);
 
+$service_name = "Bethanne Runyan";
+$service_email = "******@gmail.com";
+
 // To send HTML mail, the Content-type header must be set
 $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
@@ -20,7 +23,7 @@ $message_quote = "
 <p style='font-style: italic; margin-top: 20px; color: #777'>You can respond directly to this email.</p>
 ";
 
-$client_body = "
+$service_body = "
 <html>
 <head>
   <title>Bethanne Runyan Photography Message</title>
@@ -47,19 +50,13 @@ $receipt_body = "
 </html>
 ";
 
-$destination_mail = "****@gmail.com";
-
 // mail the client receipt
-$receipt_headers = "To: $name <$email>" . "\r\n" . "From: Bethanne Runyan <****@gmail.com>" . "\r\n";
-mail($email,"Thanks for contacting Bethanne Runyan Photography",$receipt_body, $headers . $receipt_headers);
+$receipt_headers = "To: $name <$email>" . "\r\n" . "From: $service_name <$service_email>" . "\r\n";
+mail($email,"Thanks for contacting Bethanne Runyan Photography", $receipt_body, $headers . $receipt_headers);
 
 // mail the service!
-$client_headers = 'To: Paul Gray <****@gmail.com>' . "\r\n" . "From: $name <$email>" . "\r\n";
-mail("****@gmail.com","Message from: $name ($email)",$client_body, $headers . $client_headers);
-#mail("****@gmail.com","Message from: $name ($email)",$body);
-
-# Todo: also mail receipt to sender?
-#mail("****@gmail.com","Message from: $name ($email)",$body);
+$service_headers = 'To: $service_name <$service_email>' . "\r\n" . "From: $name <$email>" . "\r\n";
+mail($service_email,"Message from: $name ($email)", $service_body, $headers . $service_headers);
 
 echo json_encode($json);
 ?>
