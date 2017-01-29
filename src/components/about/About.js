@@ -22,7 +22,7 @@ const About = () => (
       </div>
       <div className="right">
         <img className="profile-pic" src={convertLink('http://i.imgur.com/nISYFma.jpg')}/>
-        <a className="blog-link" href="http://www.google.com">My Blog</a>
+        {/*<a className="blog-link" href="http://www.google.com">My Blog</a>*/}
         <EmailForm/>
       </div>
     </div>
