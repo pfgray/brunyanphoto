@@ -12,8 +12,6 @@ import { createScrollAlbum } from './albums/ScrollAlbum';
 
 import 'font-awesome/css/font-awesome.css';
 
-console.log("UPDATED FROM JENKINS");
-
 const routes = {
   path: '/',
   component: BrunyanphotoApp,
