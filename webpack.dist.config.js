@@ -7,6 +7,7 @@
 'use strict';
 
 var webpack = require('webpack');
+var CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = {
 
@@ -41,6 +42,12 @@ module.exports = {
       'process.env': {
         'NODE_ENV': '"production"'
       }
+    }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      threshold: 10240,
+      minRatio: 0.8
     })
   ],
 
