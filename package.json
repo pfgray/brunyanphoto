@@ -12,6 +12,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "font-awesome": "^4.4.0",
+    "inferno": "^1.2.2",
+    "inferno-compat": "^1.2.2",
     "json-loader": "^0.5.4",
     "less": "^2.7.1",
     "lockr": "^0.8.4",
@@ -53,6 +55,7 @@
   },
   "scripts": {
     "start": "grunt serve",
-    "build": "grunt build"
+    "build": "grunt build",
+    "profile": "webpack --config webpack.dist.config.js --profile --json > stats.json"
   }
 }

@@ -32,7 +32,9 @@ module.exports = {
     alias: {
       'styles': __dirname + '/src/styles',
       'mixins': __dirname + '/src/mixins',
-      'components': __dirname + '/src/components/'
+      'components': __dirname + '/src/components/',
+      'react': 'inferno-compat',
+      'react-dom': 'inferno-compat'
     }
   },
   module: {
