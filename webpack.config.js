@@ -10,8 +10,8 @@ var webpack = require('webpack');
 module.exports = {
 
   output: {
-    filename: 'main.js',
-    publicPath: '/assets/'
+    publicPath: '/wp-content/themes/brunyanphoto/', //dunno why public_path don't work...
+    filename: 'main.js'
   },
 
   cache: true,
@@ -49,11 +49,8 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
     }, {
-      test: /\.(png|jpg)$/,
+      test: /\.(png|jpg|eot.*|woff.*|ttf.*|svg.*|otf.*)$/,
       loader: 'url-loader?limit=8192'
-    }, {
-      test: /\.(eot.*|woff.*|ttf.*|svg.*|otf.*)$/,
-      loader: "file-loader"
     }]
   },
 

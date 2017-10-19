@@ -12,9 +12,8 @@ var CompressionPlugin = require("compression-webpack-plugin");
 module.exports = {
 
   output: {
-    publicPath: '/assets/',
     path: 'dist/assets/',
-    filename: 'main.js'
+    filename: 'main.[hash].js'
   },
 
   debug: false,
@@ -75,7 +74,7 @@ module.exports = {
       loader: 'style-loader!css-loader!less-loader'
     }, {
       test: /\.(png|jpg)$/,
-      loader: 'url-loader?limit=8192'
+      loader: 'url-loader?limit=16192'
     }, {
       test: /\.(eot.*|woff.*|ttf.*|svg.*|otf.*)$/,
       loader: "file-loader"
