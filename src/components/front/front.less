@@ -91,6 +91,9 @@ div.logo {
   font-size: 1.5em;
   background-color: rgba(0,0,0,0.5);
   height: @header-height;
+  z-index: 10;
+  position: absolute;
+  width: 100%;
 
   > * {
     display: inline-block;
@@ -102,6 +105,7 @@ div.logo {
   }
 
   a {
+    .fancy-font();
     &:hover {
       color: #ddd;
       text-decoration: none;

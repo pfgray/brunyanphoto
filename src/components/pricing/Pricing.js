@@ -1,6 +1,6 @@
 import React from 'react';
 import PricePackage from './PricePackage';
-import packages from 'json!./packages.json';
+import packages from './packages.json';
 
 const Pricing = () => (
   <div className="pricing">

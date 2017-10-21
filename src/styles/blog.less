@@ -1,0 +1,110 @@
+article.post {
+
+  border-bottom: 1px solid #aaa;
+}
+.commentlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .comment {
+    position: relative;
+    margin-top: 1rem;
+    .says {
+      display: none;
+    }
+    .comment-author {
+      img {
+        position: absolute;
+        height: 32px;
+        width: 32px;
+        left: 16px;
+        top: 0;
+      }
+      cite.fn {
+        font-style: normal;
+        font-weight: bold;
+      }
+    }
+    .comment-author, .comment-meta {
+      display: inline-block;
+    }
+    .comment-meta {
+      a {
+        margin-left: 0.25rem;
+        color: #aaa;
+
+        &:hover {
+
+        }
+      }
+    }
+    .comment-body {
+      margin-left: 64px;
+      > p {
+        margin: 0.5rem 0 1rem;
+      }
+
+
+      &:only-child {
+        .reply {
+          display: block;
+        }
+      }
+    }
+    .reply {
+      // display: none;
+    }
+    #respond {
+      margin-left: 64px;
+    }
+    .comment-form-comment {
+      label {
+        display: none;
+      }
+    }
+
+    ul.children {
+      list-style: none;
+    }
+
+    .form-submit {
+      input.submit {
+        padding: 0.25rem 0.5rem;
+        border: 1px solid @color-primary;
+        border-radius: 0.5rem;
+        display: inline-block;
+        font-size: 1em;
+        background: rgba(0,0,0,0);
+      }
+    }
+
+    .comment-reply-link {
+      padding: 0.25rem 0.5rem;
+      border: 1px solid @color-primary;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
+    #reply-title, .logged-in-as, .comment-reply-title {
+      display: none;
+    }
+  }
+  h3#comments {
+    display: none;
+  }
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}

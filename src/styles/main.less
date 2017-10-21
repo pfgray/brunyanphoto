@@ -5,15 +5,17 @@
 @import '../components/about/about.less';
 @import '../components/portfolio/portfolio.less';
 @import '../components/pricing/pricing.less';
+@import './blog.less';
 
 @color-primary: #36384C;
 
 html, body, #content, .main {
   background: #fff;
   color: @color-primary;
-  font-family: 'Allura';//'GlacialIndifference';
   height: 100vh;
   width: 100%;
+  margin: 0;
+  .regular-font();
 }
 
 @font-face {
@@ -35,6 +37,23 @@ html, body, #content, .main {
   width: 100%;
   height: 100%;
   // background-image: data-uri("../images/noise.png");
+}
+
+#content {
+  position: absolute;
+  top: 0;
+
+  .content-inner {
+    padding: 2rem 15rem;
+    margin-top: @header-height;
+
+    @media @screen-md {
+      padding: 2rem 6rem;
+    }
+    @media @screen-sm {
+      padding: 2rem;
+    }
+  }
 }
 
 /* transitions */
@@ -59,9 +78,11 @@ html, body, #content, .main {
 
 a {
   text-decoration: none;
+  color: @color-primary;
 
   &:hover {
-    text-decoration: underline;
+    color: lighten(@color-primary, 25%);
+    text-decoration: none;
   }
 }
 

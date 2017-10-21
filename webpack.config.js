@@ -6,6 +6,8 @@
  */
 'use strict';
 var webpack = require('webpack');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
 
 module.exports = {
 
@@ -14,11 +16,7 @@ module.exports = {
     filename: 'main.js'
   },
 
-  cache: true,
-  debug: true,
-  devtool: '#inline-source-map',
   entry: [
-      'webpack/hot/only-dev-server',
       './src/components/main.js'
   ],
 
@@ -28,34 +26,34 @@ module.exports = {
   },
 
   resolve: {
-    extensions: ['', '.js', '.jsx'],
+    extensions: ['.js'],
     alias: {
-      'styles': __dirname + '/src/styles',
-      'mixins': __dirname + '/src/mixins',
-      'components': __dirname + '/src/components/',
       'react': 'inferno-compat',
       'react-dom': 'inferno-compat'
     }
   },
   module: {
-    loaders: [{
+    rules: [{
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      loader: 'react-hot!babel-loader'
+      use: ['babel-loader']
     }, {
       test: /\.less/,
-      loader: 'style-loader!css-loader!less-loader'
+      use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: ['css-loader', 'less-loader']
+      })
     }, {
       test: /\.css$/,
-      loader: 'style-loader!css-loader'
+      use: ['style-loader', 'css-loader']
     }, {
       test: /\.(png|jpg|eot.*|woff.*|ttf.*|svg.*|otf.*)$/,
-      loader: 'url-loader?limit=8192'
+      use: 'url-loader?limit=8192'
     }]
   },
 
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new ExtractTextPlugin("custom_styles.css")
   ]
 
 };

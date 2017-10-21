@@ -69,8 +69,6 @@ const Front = React.createClass({
         {getWallpaperStyleForUrl(this.state.backImage)}
         {getWallpaperStyleForUrl(this.state.frontImage, this.state.fading)}
         <div className="overlay">
-          <Header />
-          <Social />
           <div className='logo'>
             <img className='logo' src={logo} />
           </div>

@@ -24,7 +24,8 @@ gulp.task('build', function(){
     index.pipe(clone()).pipe(concat('portfolio.php')),
     index.pipe(clone()).pipe(concat('pricing.php')),
     index.pipe(clone()).pipe(concat('about.php')),
-    gulp.src('src/functions.php')
+    //gulp.src('src/functions.php'),
+    gulp.src(['src/php/*.php'])
   )
 
   // PHP
