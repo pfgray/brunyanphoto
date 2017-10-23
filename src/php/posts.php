@@ -1,33 +1,44 @@
-<?php
-// Start the loop.
-while ( have_posts() ) : the_post();
+<?php /* Template Name: Posts Page */ 
+get_header(); ?>
 
-  // Include the page content template.
-  ?>
-  <header class="entry-header">
-    <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-  </header><!-- .entry-header -->
+<div id="content">
+  <div class="posts-inner">
 
-  <div class="entry-content">
-    <?php the_content(); ?>
-    <?php
-      wp_link_pages( array(
-        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentyfifteen' ) . '</span>',
-        'after'       => '</div>',
-        'link_before' => '<span>',
-        'link_after'  => '</span>',
-        'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'twentyfifteen' ) . ' </span>%',
-        'separator'   => '<span class="screen-reader-text">, </span>',
-      ) );
-    ?>
-  </div><!-- .entry-content -->
-  <?php
-  // If comments are open or we have at least one comment, load up the comment template.
-  if ( comments_open() || get_comments_number() ) :
-    comments_template();
-  endif;
+    <div id="primary" class="content-area">
+      <main id="main" class="site-main" role="main">
 
-// End the loop.
-endwhile;
+      <div class="post-content">
+        Posts by Bethanne Runyan
+      </div>
 
-?>
+      <?php 
+      // the query
+      $wpb_all_query = new WP_Query(array('post_type'=>'post', 'post_status'=>'publish', 'posts_per_page'=>-1)); ?>
+      
+      <?php if ( $wpb_all_query->have_posts() ) : ?>
+        <ul class="post-list">
+          <!-- the loop -->
+          <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
+            <li>
+              <div class="post-title" style="background-image: url('<?php the_post_thumbnail_url() ?>')">
+                <div class="post-content">
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                  <span class="post-date"><?php the_date(); ?></span>
+                </div>
+              </div>
+              <div class="post-body post-content"><?php the_content(); ?></div>
+            </li>
+          <?php endwhile; ?>
+          <!-- end of the loop -->
+        </ul>
+      
+        <?php wp_reset_postdata(); ?>
+      
+      <?php else : ?>
+          <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+      <?php endif; ?>
+
+      </main><!-- #main -->
+    </div><!-- #primary -->
+  </div><!-- .wrap -->
+</div>

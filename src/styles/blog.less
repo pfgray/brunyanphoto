@@ -57,6 +57,7 @@ article.post {
     }
     #respond {
       margin-left: 64px;
+      position: relative;
     }
     .comment-form-comment {
       label {
@@ -68,25 +69,24 @@ article.post {
       list-style: none;
     }
 
-    .form-submit {
-      input.submit {
-        padding: 0.25rem 0.5rem;
-        border: 1px solid @color-primary;
-        border-radius: 0.5rem;
-        display: inline-block;
-        font-size: 1em;
-        background: rgba(0,0,0,0);
-      }
-    }
-
     .comment-reply-link {
       padding: 0.25rem 0.5rem;
       border: 1px solid @color-primary;
       border-radius: 0.5rem;
       display: inline-block;
     }
-    #reply-title, .logged-in-as, .comment-reply-title {
-      display: none;
+    #reply-title, .logged-in-as {
+      visibility: hidden;
+      height: 0;
+      width:0;
+      margin:0;
+
+      small {
+        visibility: visible;
+        position: absolute;
+        bottom:0;
+        right:0;
+      }
     }
   }
   h3#comments {
@@ -107,4 +107,50 @@ textarea {
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-submit {
+  input.submit {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid @color-primary;
+    border-radius: 0.5rem;
+    display: inline-block;
+    font-size: 1em;
+    background: rgba(0,0,0,0);
+  }
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  background-size: cover;
+  background-position: center;
+  .post-title-padding(0rem);
+
+  &.single {
+    .post-title-padding(@header-height);
+  }
+
+  a {
+    color: #fff;
+  }
+  .post-date {
+    font-size: 1rem;
+    font-style: italic;
+    color: #ccc;
+  }
+}
+
+.posts-inner {
+  margin-top: @header-height;
+}
+
+.post-content {
+  .content-padding();
 }

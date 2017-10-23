@@ -4,7 +4,7 @@
 @screen-sm:    ~"only screen and (min-width: 0px) and (max-width: 769px)";
 @screen-xs:    ~"only screen and (min-width: 0px) and (max-width: 400px)";
 
-@header-height: 39px;
+@header-height: 2.45rem;
 
 
 .fancy-font() {
@@ -13,4 +13,19 @@
 
 .regular-font() {
   font-family: 'GlacialIndifference';
+}
+
+.post-title-padding(@top){
+  padding: (3rem + @top) 0 3rem 0;
+}
+
+.content-padding() {
+  padding: 2rem 15rem;
+
+  @media @screen-md {
+    padding: 2rem 6rem;
+  }
+  @media @screen-sm {
+    padding: 2rem;
+  }
 }

@@ -13,12 +13,13 @@ module.exports = {
 
   output: {
     publicPath: '/wp-content/themes/brunyanphoto/', //dunno why public_path don't work...
-    filename: 'main.js'
+    filename: '[name].js'
   },
 
-  entry: [
-      './src/components/main.js'
-  ],
+  entry: {
+      main: './src/components/main.js',
+      portfolio: './src/components/portfolio.js'
+  },
 
   stats: {
     colors: true,
