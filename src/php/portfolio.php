@@ -17,27 +17,41 @@
   </style>
   <script>
     window.publicAssetPath = "<?php echo get_bloginfo('template_directory'); ?>/";
+    <?php
+      function get_first_image_by_tag($tag) {
+        $media_items = get_attachments_by_media_tags('media_tags='.$tag);
+        if ($media_items) {
+          $media_item = $media_items[0];
+          $item_metadata = wp_get_attachment_metadata($media_item->ID);
+          $item_height = $item_metadata['height'];
+          $item_width = $item_metadata['width'];
+          return "{link:\"".$media_item->guid."\",id:".$media_item->ID.",height:$item_height,width:$item_width}";
+        } else {
+          return "null";
+        }
+      }
+    ?>
     window.app_config = {
-      imgur: {
-        client_id: '114ac9e0eea41c1',
-        main_album: 'rZTXS'
-      },
       portfolio:[{
         label: 'Weddings',
-        id: '9k9yU',
+        id: 'weddings',
+        front: <?php echo get_first_image_by_tag('weddings') ?>,
         link: '/weddings'
       }, {
         label: 'Engagements',
-        id: 'aY0TY',
+        id: 'engagements',
+        front: <?php echo get_first_image_by_tag('engagements') ?>,
         link: '/headshots'
       }, {
         label: 'Kids/Families',
-        id: 'QS098',
+        id: 'families',
+        front: <?php echo get_first_image_by_tag('families') ?>,
         link: '/families'
       }, {
         label: 'Maternity',
-        id: 'Nt7FD',
-        link: '/newborn'
+        id: 'maternity',
+        front: <?php echo get_first_image_by_tag('maternity') ?>,
+        link: '/maternity'
       }]
     };
   </script>

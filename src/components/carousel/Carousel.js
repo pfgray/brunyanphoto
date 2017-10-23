@@ -14,10 +14,8 @@ const CarouselFactory = {
     let portraitIdx = 0;
 
     const getPortraitOrLandscape = function() {
-      const w = Math.max(
-        document.documentElement.clientWidth, window.innerWidth || 0);
-      const h = Math.max(
-        document.documentElement.clientHeight, window.innerHeight || 0);
+      const w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+      const h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
       if(w > h) {
         return landscapeImages[landscapeIdx++ % landscapeImages.length].link;
       }
@@ -27,7 +25,7 @@ const CarouselFactory = {
     return {
       getNextImage() {
         const pic = getPortraitOrLandscape();
-        return convertLink(pic);
+        return pic;//convertLink(pic);
       }
     };
   }

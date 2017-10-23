@@ -35,15 +35,12 @@ const Front = React.createClass({
     //   set frontImage to fading,
     //   back Image to fading in
     // in 5000 ms, switch the photos and repeat
-    ImageService.getMainAlbum()
-    .then(album => {
-      this.carousel = Carousel.create(album.images);
-      this.setState({
-        frontImage: this.carousel.getNextImage(),
-        backImage: this.carousel.getNextImage()
-      });
-      this.shiftImage();
+    this.carousel = Carousel.create(window.frontImages);
+    this.setState({
+      frontImage: this.carousel.getNextImage(),
+      backImage: this.carousel.getNextImage()
     });
+    this.shiftImage();
   },
   componentWillUnmount() {
     clearTimeout(this.timeout);

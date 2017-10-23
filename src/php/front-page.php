@@ -39,6 +39,22 @@
         link: '/newborn'
       }]
     };
+
+    window.frontImages = [
+      <?php
+        $media_items = get_attachments_by_media_tags('media_tags=front');
+        if ($media_items) {
+          foreach ($media_items as &$media_item) {
+            $full_media_item = wp_get_attachment_metadata($media_item->ID);
+            //echo "//".print_r($full_media_item);
+            $item_height = $full_media_item['height'];
+            $item_width = $full_media_item['width'];
+            echo "{link:\"".$media_item->guid."\",id:".$media_item->ID.",height:$item_height,width:$item_width},";
+          }
+        }
+        ?>
+    ];
+
   </script>
 </head>
 <body>
