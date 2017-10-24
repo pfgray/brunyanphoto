@@ -3,7 +3,7 @@
 .portfolio {
   cursor: pointer;
   width: 100%;
-  margin-top: 40px;
+  margin-top: ~"calc(40px +" @header-height ~")";
   height: ~"calc(100% - (" @header-height ~" + 40px))";
 
   .portfolio-link {
@@ -13,6 +13,7 @@
     text-align: center;
     font-size: 1.5em;
     height: 100%;
+    .fancy-font();
 
     &:last-child {
       margin-right: 0;
@@ -23,8 +24,8 @@
       display: block;
       height: 100%;
 
-      > div:first-child {
-      }
+      // > div:first-child {
+      // }
     }
 
     .cover-image-wrapper {

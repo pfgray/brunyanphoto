@@ -18,45 +18,45 @@
   <script>
     window.publicAssetPath = "<?php echo get_bloginfo('template_directory'); ?>/";
     <?php
-      function get_first_image_by_tag($tag) {
-        $media_items = get_attachments_by_media_tags('media_tags='.$tag);
-        if ($media_items) {
-          $media_item = $media_items[0];
-          $item_metadata = wp_get_attachment_metadata($media_item->ID);
-          $item_height = $item_metadata['height'];
-          $item_width = $item_metadata['width'];
-          return "{link:\"".$media_item->guid."\",id:".$media_item->ID.",height:$item_height,width:$item_width}";
-        } else {
-          return "null";
-        }
+      // Retrieve the first gallery in the post
+      $gallery = get_post_gallery( $post , false);
+      
+      $gallery_images = array();
+      // Loop through each image in each gallery
+      foreach( explode(',', $gallery['ids']) as $key=>$image_id ) {
+        $item_metadata = wp_get_attachment_metadata($image_id);
+        $item_url = wp_get_attachment_url($image_id);
+        $item_height = $item_metadata['height'];
+        $item_width = $item_metadata['width'];
+        array_push($gallery_images, "{link:\"".$item_url."\",id:".$image_id.",height:$item_height,width:$item_width}");
       }
     ?>
     window.app_config = {
       portfolio:[{
         label: 'Weddings',
         id: 'weddings',
-        front: <?php echo get_first_image_by_tag('weddings') ?>,
+        front: <?php echo $gallery_images[0] ?>,
         link: '/weddings'
       }, {
         label: 'Engagements',
         id: 'engagements',
-        front: <?php echo get_first_image_by_tag('engagements') ?>,
+        front: <?php echo $gallery_images[1] ?>,
         link: '/headshots'
       }, {
         label: 'Kids/Families',
         id: 'families',
-        front: <?php echo get_first_image_by_tag('families') ?>,
+        front: <?php echo $gallery_images[2] ?>,
         link: '/families'
       }, {
         label: 'Maternity',
         id: 'maternity',
-        front: <?php echo get_first_image_by_tag('maternity') ?>,
+        front: <?php echo $gallery_images[3] ?>,
         link: '/maternity'
       }]
     };
   </script>
 </head>
-<body>
+<body class="light">
   <!--[if lt IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->

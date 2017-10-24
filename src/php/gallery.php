@@ -1,4 +1,4 @@
-<?php /* Template Name: Gallery Template */  ?>
+<?php /* Template Name: Gallery */  ?>
 <!doctype html>
 <html>
 <head>
@@ -17,47 +17,33 @@
   </style>
   <script>
     window.publicAssetPath = "<?php echo get_bloginfo('template_directory'); ?>/";
-    window.app_config = {
-      imgur: {
-        client_id: '114ac9e0eea41c1',
-        main_album: 'rZTXS'
-      },
-      portfolio:[{
-        label: 'Weddings',
-        id: '9k9yU',
-        link: '/weddings'
-      }, {
-        label: 'Engagements',
-        id: 'aY0TY',
-        link: '/headshots'
-      }, {
-        label: 'Kids/Families',
-        id: 'QS098',
-        link: '/families'
-      }, {
-        label: 'Maternity',
-        id: 'Nt7FD',
-        link: '/newborn'
-      }]
-    };
+    
+    window.galleryImages = [
+      <?php
+
+        // Retrieve the first gallery in the post
+        $gallery = get_post_gallery( $post , false);
+         
+        // Loop through each image in each gallery
+        foreach( explode(',', $gallery['ids']) as $key=>$image_id ) {
+          $item_metadata = wp_get_attachment_metadata($image_id);
+          $item_url = wp_get_attachment_url($image_id);
+          $item_height = $item_metadata['height'];
+          $item_width = $item_metadata['width'];
+          echo "{link:\"".$item_url."\",id:".$image_id.",height:$item_height,width:$item_width},";
+        }
+
+        ?>
+    ];
   </script>
 </head>
-<body>
+<body class="light">
   <!--[if lt IE 8]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
   <?php get_header(); ?>
   <div id="content"></div>
-    <div>hrm</div>
-  <?php 
-    $media_items = get_attachments_by_media_tags('media_tags=road');
-    if ($media_items) {
-    echo "
-    
-    ". var_dump($media_items). "
-    ";
-    }
-  ?>
-  
+
+  <script type="text/javascript" src="<?php echo get_bloginfo('template_directory'); ?>/gallery.js"></script>
 </body>
 </html>
