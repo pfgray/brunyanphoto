@@ -2,7 +2,6 @@ import React from 'react';
 
 import Carousel from '../carousel/Carousel';
 import Header from './Header';
-import ImageService from '../images/ImageService.js';
 import logo from '../../images/brphoto-white.png';
 import Social from './Social';
 

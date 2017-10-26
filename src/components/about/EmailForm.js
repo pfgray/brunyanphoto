@@ -52,7 +52,7 @@ const EmailForm = React.createClass({
         if(!this.state.sending && !this.state.successful) {
           this.setState({ sending: true });
           requestToPromise(
-            request.post('/test/email.php')
+            request.post('/wp-json/brunyanphoto/v1/email')
               .send(this.state.form)
           ).then(resp => {
             console.log('Got response: ', resp);

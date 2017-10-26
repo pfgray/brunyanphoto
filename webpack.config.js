@@ -19,7 +19,8 @@ module.exports = {
   entry: {
     main: './src/components/main.js',
     portfolio: './src/components/portfolio.js',
-    gallery: './src/components/gallery.js'
+    gallery: './src/components/gallery.js',
+    about: './src/components/about.js'
   },
 
   stats: {

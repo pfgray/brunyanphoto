@@ -22,8 +22,6 @@ gulp.task('build', function(){
   const phpFiles = merge(
     index,
     index.pipe(clone()).pipe(concat('portfolio.php')),
-    index.pipe(clone()).pipe(concat('pricing.php')),
-    index.pipe(clone()).pipe(concat('about.php')),
     //gulp.src('src/functions.php'),
     gulp.src(['src/php/*.php'])
   )
