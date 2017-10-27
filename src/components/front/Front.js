@@ -22,9 +22,10 @@ const getWallpaperStyleForUrl = (image, fading) => {
 
 const Front = React.createClass({
   getInitialState() {
+    this.carousel = Carousel.create(window.frontImages);
     return {
-      frontImage: null,
-      backImage: null,
+      frontImage: this.carousel.getNextImage(),
+      backImage: this.carousel.getNextImage(),
       fading: false
     };
   },
@@ -34,12 +35,7 @@ const Front = React.createClass({
     //   set frontImage to fading,
     //   back Image to fading in
     // in 5000 ms, switch the photos and repeat
-    this.carousel = Carousel.create(window.frontImages);
-    this.setState({
-      frontImage: this.carousel.getNextImage(),
-      backImage: this.carousel.getNextImage()
-    });
-    this.shiftImage();
+    setTimeout(() => this.shiftImage(), SwitchInterval);
   },
   componentWillUnmount() {
     clearTimeout(this.timeout);
@@ -59,7 +55,7 @@ const Front = React.createClass({
     }, FadeDuration);
   },
   render() {
-
+    console.log('rendering:', this.state.fading, this.state.frontImage, '~~~' , this.state.backImage)
     return (
       <div className="front">
         {getWallpaperStyleForUrl(this.state.backImage)}

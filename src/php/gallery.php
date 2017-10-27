@@ -7,6 +7,10 @@
   <title></title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta property="og:title" content="<?php the_title(); ?>">
+	<meta property="og:image" content="<?php the_post_thumbnail_url(); ?>">
+	<meta property="og:url" content="<?php echo get_permalink(get_the_ID()); ?>">
+	<meta property="og:type" content="article">
   <style>
       html, body, #content {
         background: #222;

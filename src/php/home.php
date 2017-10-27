@@ -7,6 +7,10 @@
   <meta name="google" content="notranslate">
   <meta http-equiv="Content-Language" content="en">
   <title><?php single_post_title(); ?></title>
+	<meta property="og:title" content="<?php the_title(); ?>">
+	<meta property="og:image" content="<?php the_post_thumbnail_url(); ?>">
+	<meta property="og:url" content="<?php get_post_permalink(get_the_ID()); ?>">
+	<meta property="og:type" content="blog">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 </head>

@@ -43,7 +43,7 @@
             endwhile; // End of the loop.
             ?>
           </div><div class="right">
-            <div id="about-mount"/>
+            <div id="about-mount" />
           </div>
         </div>
       </div>
