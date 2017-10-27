@@ -36,7 +36,7 @@
     window.publicAssetPath = "<?php echo get_bloginfo('template_directory'); ?>/";
   </script>
 </head>
-<body>
+<body class="">
 	<?php get_header(); ?>
 	<script src='/wp-includes/js/comment-reply.min.js?ver=4.8.2'></script>
 

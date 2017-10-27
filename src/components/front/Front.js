@@ -1,9 +1,7 @@
 import React from 'react';
 
 import Carousel from '../carousel/Carousel';
-import Header from './Header';
 import logo from '../../images/brphoto-white.png';
-import Social from './Social';
 
 const FadeDuration = 2000; // ms
 const SwitchInterval = 3000; // ms
@@ -55,7 +53,6 @@ const Front = React.createClass({
     }, FadeDuration);
   },
   render() {
-    console.log('rendering:', this.state.fading, this.state.frontImage, '~~~' , this.state.backImage)
     return (
       <div className="front">
         {getWallpaperStyleForUrl(this.state.backImage)}

@@ -10,8 +10,6 @@ import BrunyanphotoApp from './BrunyanphotoApp';
 // import Portfolio from './portfolio/Portfolio';
 import ScrollAlbum from './albums/ScrollAlbum';
 
-import 'font-awesome/css/font-awesome.css';
-
 render((
   <BrunyanphotoApp>
     <ScrollAlbum title={'Hmm'} images={window.galleryImages} />

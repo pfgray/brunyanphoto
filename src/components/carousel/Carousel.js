@@ -8,8 +8,6 @@ const CarouselFactory = {
     const landscapeImages = images.filter(isLandscape);
     const portraitImages = images.filter(isPortrait);
 
-    console.log('got it all:', landscapeImages, portraitImages);
-
     let landscapeIdx = 0;
     let portraitIdx = 0;
 

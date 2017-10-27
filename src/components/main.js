@@ -10,8 +10,6 @@ import Front from './front/Front';
 // import Portfolio from './portfolio/Portfolio';
 // import { createScrollAlbum } from './albums/ScrollAlbum';
 
-import 'font-awesome/css/font-awesome.css';
-
 render((
   <BrunyanphotoApp>
     <Front/>

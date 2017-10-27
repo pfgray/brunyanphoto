@@ -10,8 +10,6 @@ import About from './about/About';
 // import Portfolio from './portfolio/Portfolio';
 //import ScrollAlbum from './albums/ScrollAlbum';
 
-import 'font-awesome/css/font-awesome.css';
-
 render((
   <BrunyanphotoApp>
     <About featuredImage={window.aboutFeaturedImage} />
