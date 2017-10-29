@@ -48,30 +48,9 @@ div.logo {
 
 }
 
-.overlay > .social {
-  display:none;
-  @media @screen-sm {
-    display: block;
-  }
-  @media @screen-xs {
-    display: block;
-    a {
-      font-size: 1.25em;
-    }
-  }
-  position: absolute;
-  bottom: 1em;
-  left:2em;
-  a {
-    color: white;
-    font-size:2em;
-    margin-right: 1em;
-  }
-}
-
 .nav{
   box-sizing: border-box;
-  a{
+  a {
     color:#FFF;
     text-decoration: none;
     font-family:sans-serif;
@@ -118,8 +97,14 @@ div.logo {
   .social {
     //margin-right: 1em;
     a {
+      display: flex;
+      align-items: center;
       font-size: 0.5em;
       margin-right: 1em;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 
@@ -168,21 +153,26 @@ div.logo {
     transition-delay: 0s, 0s;
   }
 
+  .social {
+    height: 100%;
+    vertical-align:middle;
+    display: inline-flex;
+    align-items: center;
+    a { height: 100%; }
+    a svg {
+      height: 100%;
+    }
+  }
+
   @media @screen-sm {
+    height: auto;
     a {
       display:inline-block;
       width: calc(100% / 3);
       margin:0;
     }
     .social {
-      display:none;
-    }
-  }
-
-  @media @screen-xs {
-    text-align: center;
-    .social {
-      display:none;
+      height: @header-height;
     }
   }
 
@@ -200,20 +190,6 @@ body.light {
 
     a {
       color: @color-primary;
-    }
-  }
-}
-
-
-.header {
-  .social {
-    height: 100%;
-    vertical-align:middle;
-    display: inline-flex;
-    align-items: center;
-
-    a, a svg {
-      height: 90%;
     }
   }
 }

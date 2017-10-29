@@ -40,22 +40,22 @@
         label: 'Weddings',
         id: 'weddings',
         front: <?php echo $gallery_images[0] ?>,
-        link: '/weddings'
+        link: '/portfolio/weddings'
       }, {
         label: 'Engagements',
         id: 'engagements',
         front: <?php echo $gallery_images[1] ?>,
-        link: '/headshots'
+        link: '/portfolio/headshots'
       }, {
         label: 'Kids/Families',
         id: 'families',
         front: <?php echo $gallery_images[2] ?>,
-        link: '/families'
+        link: '/portfolio/families'
       }, {
         label: 'Maternity',
         id: 'maternity',
         front: <?php echo $gallery_images[3] ?>,
-        link: '/maternity'
+        link: '/portfolio/maternity'
       }]
     };
   </script>
