@@ -89,16 +89,35 @@
     }
   }
 
+  .about-mobile-featured {
+    display: none;
+  }
+
   @media @screen-sm {
-    width:90%;
+    .about-mobile-featured {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+      margin-bottom: 1em;
+    }
+    //width:90%;
     .split {
+      margin-top: 1em;
+      .left, .right {
+        height: auto;
+        width: 100%;
+      }
       .right {
-        display:none;
+        width: 100%;
+        .profile-pic {
+          display: none;
+        }
       }
       .left {
         width: 100%;
         margin: 0;
         .email {
+          margin-top: 2em;
           display: block;
         }
         .profile-pic {

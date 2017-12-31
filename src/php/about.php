@@ -12,7 +12,7 @@
 	<meta property="og:type" content="profile">
 	<meta property="og:image" content="<?php the_post_thumbnail_url(); ?>">
   <meta property="og:url" content="<?php get_post_permalink(get_the_ID()); ?>">
-  
+
   <style>
       html, body, #content {
         background: #222;
@@ -36,6 +36,7 @@
       <div class="about">
         <div class="split">
           <div class="left">
+            <img class="about-mobile-featured" src="<?php the_post_thumbnail_url() ?>"></img>
             <?php
             /* Start the Loop */
             while ( have_posts() ) : the_post();
