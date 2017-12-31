@@ -6,6 +6,7 @@ const merge = require('merge-stream');
 const gulpWebpack = require('gulp-webpack');
 const concat = require('gulp-concat');
 const clone = require('gulp-clone');
+const zip = require('gulp-zip');
 
 const distWebpackConfig = require('./webpack.config.js');
 const packageJson = require('./package.json');
@@ -21,8 +22,6 @@ gulp.task('build', function(){
   const index = gulp.src('src/index.php');
   const phpFiles = merge(
     index,
-    index.pipe(clone()).pipe(concat('portfolio.php')),
-    //gulp.src('src/functions.php'),
     gulp.src(['src/php/*.php'])
   )
 
@@ -34,6 +33,14 @@ gulp.task('build', function(){
 
   const allAssets =
     merge(webpackBundle, randomFiles, phpFiles)
-      .pipe(gulp.dest('./dist'));
 
+  const zipAssets = allAssets.pipe(clone());
+
+  return merge(
+    zipAssets
+      .pipe(zip(`brunyanphoto.zip`))
+      .pipe(gulp.dest('./')),
+    allAssets
+      .pipe(gulp.dest('./dist'))
+  )
 });

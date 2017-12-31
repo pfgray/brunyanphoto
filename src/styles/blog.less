@@ -1,5 +1,4 @@
 article.post {
-
   border-bottom: 1px solid #aaa;
 }
 .commentlist {
@@ -127,14 +126,35 @@ textarea {
 }
 
 .post-title {
+  text-align: center;
+  .post-date {
+    display: inline-block;
+    margin: 3rem auto 2rem;
+    font-size:1rem;
+    border-bottom: 2px solid @color-accent;
+  }
+  a {
+    .fancy-font();
+    display: block;
+    font-size: 3rem;
+    margin: 0 5rem 1rem 5rem;
+    &:hover {
+      color: @color-primary;
+    }
+  }
+}
+
+.post-title-img {
+  height: 10rem;
   font-weight: bold;
   font-size: 1.5rem;
   background-size: cover;
   background-position: center;
-  .post-title-padding(0rem);
+  //.post-title-padding(0rem);
 
   &.single {
-    .post-title-padding(@header-height);
+    //.post-title-padding(@header-height);
+    height: 15rem;
   }
 
   a {

@@ -29,6 +29,11 @@
          
         // Loop through each image in each gallery
         foreach( explode(',', $gallery['ids']) as $key=>$image_id ) {
+          // $src_data = wp_get_attachment_image_src($image_id, 'large');
+          // $item_url = $src_data[0];
+          // $item_width = $src_data[1];
+          // $item_height = $src_data[2];
+
           $item_metadata = wp_get_attachment_metadata($image_id);
           $item_url = wp_get_attachment_url($image_id);
           $item_height = $item_metadata['height'];

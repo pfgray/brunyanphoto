@@ -39,12 +39,11 @@
             <!-- the loop -->
             <?php while ( $wpb_all_query->have_posts() ) : $wpb_all_query->the_post(); ?>
               <li>
-                <div class="post-title" style="background-image: url('<?php the_post_thumbnail_url() ?>')">
-                  <div class="post-content">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    <span class="post-date"><?php the_date(); ?></span>
-                  </div>
+                <div class="post-title">
+                  <div class="post-date"><?php the_date(); ?></div>
+                  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </div>
+                <div class="post-title-img" style="background-image: url('<?php the_post_thumbnail_url() ?>')"></div>
                 <div class="post-body post-content"><?php the_content(); ?></div>
               </li>
             <?php endwhile; ?>

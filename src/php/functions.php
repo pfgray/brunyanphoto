@@ -4,11 +4,6 @@
   add_theme_support( 'post-formats', array( 'post', 'page', 'gallery' ) );
   // require_once ('gallery-shortcode.php');
 
-
-  function my_awesome_func() {
-    return "uhrm...";
-  }
-
   add_action( 'rest_api_init', function () {
     register_rest_route( 'brunyanphoto/v1', '/email', array(
       'methods' => 'POST',

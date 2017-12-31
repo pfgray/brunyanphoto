@@ -46,6 +46,7 @@
     "gulp-clone": "^1.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-webpack": "^1.5.0",
+    "gulp-zip": "^4.0.0",
     "jasmine-core": "^2.3.4",
     "karma": "~0.12.21",
     "karma-jasmine": "^0.3.5",

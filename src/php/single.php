@@ -49,11 +49,10 @@
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
 					?>
-						<div class="post-title single" style="background-image: url('<?php the_post_thumbnail_url() ?>')">
-							<div class="post-content">
-								<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								<span class="post-date"><?php the_date(); ?></span>
-							</div>
+						<div class="post-title-img single" style="background-image: url('<?php the_post_thumbnail_url() ?>')"></div>
+						<div class="post-title">
+							<span class="post-date"><?php the_date(); ?></span>
+							<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 						</div>
 
 						<div class="post-content">
